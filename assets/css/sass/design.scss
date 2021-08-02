@@ -1,0 +1,172 @@
+$light_gray: rgb(209, 209, 209);
+
+body {
+}
+
+section, div, main {
+    // border: 1px solid black;
+    min-height: 50px;
+}
+
+
+main {  
+    #sideMenu {
+    }
+
+    #centralBlock {
+        #topBar {
+            #search {
+            }
+            #miniPhoto {
+                #profilePic {
+                    
+                    img {
+                        border-radius: 100px;
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+                #profileName {
+                    padding-top: 1%;
+                }
+                
+            }
+        }
+        #mainSection {
+            #yourProfile {
+                padding-left: 5%;
+                background-color: $light_gray;
+
+            }
+
+            #profileBlock {
+                padding: 5%;
+                background-color: $light_gray;
+
+                #profilePhoto {
+                    background-color: white;
+                    text-align: center;
+                    img {
+                        height: 150px;
+                        width: 150px;
+                        border-radius: 80px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+                }
+                #formBlock {
+                    padding-bottom: 5%;
+                    background-color: white;
+                    border: 1px solid gray;
+                    #leftForm {
+                        border: 1px solid gray;
+                    }
+                    #rightForm {
+                        border: 1px solid gray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//laptop
+@media screen and (min-width: 527px) {
+    main {
+        display: grid; 
+        grid-template-columns: 20% 80%; 
+        grid-template-areas: 
+            "sidemenu centralBlock"; 
+    
+        #sideMenu {
+            grid-area: sidemenu;
+        }
+    
+        #centralBlock {
+            grid-area: centralBlock;
+            #topBar {
+                display: grid; 
+                grid-template-columns: 70% 30%; 
+                grid-template-areas: 
+                "search miniPhoto";    
+                #search {
+                    grid-area: search;
+                }
+                #miniPhoto {
+                    grid-area: miniPhoto;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                }
+            }
+            #mainSection {
+                #yourProfile {
+                    background-color: $light_gray;
+                }
+                #profileBlock {
+                    background-color: $light_gray;
+                    #formBlock {                
+                        display: grid; 
+                        grid-template-columns: 50% 50%; 
+                        grid-template-areas: 
+                        "leftForm rightForm"; 
+                        #leftForm {
+                            grid-area: leftForm;
+                        }
+                        #rightForm {
+                            grid-area: rightForm;
+                        }
+                    }
+                }
+            }        
+        }
+    }
+    
+}
+
+
+
+//tablet
+@media screen and (max-width: 526px) {
+    main {
+        display: grid; 
+        grid-template-columns: 0% 100%; 
+        grid-template-areas: 
+            "sidemenu centralBlock"; 
+    
+        #sideMenu {
+            grid-area: sidemenu;
+            display: none;
+        }
+    
+        #centralBlock {
+            grid-area: centralBlock;
+            #topBar {
+                display: grid; 
+                grid-template-columns: 70% 30%; 
+                grid-template-areas: 
+                "search miniPhoto";    
+                #search {
+                    grid-area: search;
+                }
+                #miniPhoto {
+                    grid-area: miniPhoto;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                }
+            }
+            #mainSection {
+                #yourProfile {
+                    background-color: $light_gray;
+                }
+    
+                #profileBlock {
+                    background-color: $light_gray;
+                }
+            }
+            
+        }
+    }
+    
+}
